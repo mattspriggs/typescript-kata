@@ -1,6 +1,9 @@
 // getGreeting should return a string containing
 // 'Hello ' and the contents of `name`
-export function getGreeting(name: string): void {}
+export function getGreeting(name: string): string {
+  let greeting: string = `Hello ${name}`
+  return greeting
+}
 
 // getFullName should return a string containing the contents
 // of `firstName` and the contents of `lastName`
