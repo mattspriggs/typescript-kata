@@ -124,4 +124,13 @@ export function sumMatchingType(
 // getNextTrafficLightColour accepts the current colour of a traffic light colour and returns the next colour
 // the light sequence is green -> yellow -> red -> green -> yellow -> (etc)
 // Remember to use a type alias!
-export function getNextTrafficLightColour(): void {}
+export function getNextTrafficLightColour(colour: string): string {
+  if (colour === 'green') {
+    return 'yellow'
+  }
+  if (colour === 'yellow') {
+    return 'red'
+  } else {
+    return 'green'
+  }
+}
