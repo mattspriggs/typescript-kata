@@ -70,23 +70,56 @@ export function greetFullName(
 
 // addNumbersAndStrings accepts two arguments that can be either a number or a number inside a string
 // the sum of the two arguments should be returned as a number regardless of their original type
-export function addNumbersAndStrings(): void {}
+export function addNumbersAndStrings(
+  num1: string | number,
+  num2: string | number
+): number {
+  // let sum = 0
+  if (typeof num1 === 'string' || typeof num2 === 'string') {
+    return Number(num1) + Number(num2)
+  } else {
+    return num1 + num2
+  }
+}
 
 // fizzbuzz accepts a number and returns a string or number
 // if the number is divisible by 3, return 'fizz'
 // if the number is divisible by 5, return 'buzz'
 // if the number is divisible by 3 and 5, return 'fizzbuzz'
 // otherwise, return the original number
-export function fizzbuzz(): void {}
+export function fizzbuzz(num1: number): string | number {
+  if (num1 % 3 === 0 && num1 % 5 === 0) {
+    return 'fizzbuzz'
+  }
+  if (num1 % 3 === 0) {
+    return 'fizz'
+  }
+  if (num1 % 5 === 0) {
+    return 'buzz'
+  } else {
+    return num1
+  }
+}
 
 // ----------- TYPE ALIASES -----------
 
-type StringOrNumber = void
+type StringOrNumber = string | number
 
 // sumMatchingType accepts two arguments that can be either a number or a string
 // if both arguments are numbers, the sum of the two arguments should be returned as a number
 // if either argument is a string, the two arguments should be summed together and returned as a string
-export function sumMatchingType(): void {}
+export function sumMatchingType(
+  a: number | string,
+  b: number | string
+): number | string {
+  if (typeof a === 'number' && typeof b === 'number') {
+    return a + b
+  } else {
+    const sum: number = Number(a) + Number(b)
+    const sumString = String(sum)
+    return sumString
+  }
+}
 
 // getNextTrafficLightColour accepts the current colour of a traffic light colour and returns the next colour
 // the light sequence is green -> yellow -> red -> green -> yellow -> (etc)
