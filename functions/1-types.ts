@@ -1,14 +1,14 @@
 // getGreeting should return a string containing
 // 'Hello ' and the contents of `name`
 export function getGreeting(name: string): string {
-  let greeting: string = `Hello ${name}`
+  const greeting = `Hello ${name}`
   return greeting
 }
 
 // getFullName should return a string containing the contents
 // of `firstName` and the contents of `lastName`
 export function getFullName(firstName: string, lastName: string): string {
-  let fullName: string = `${firstName} ${lastName}`
+  const fullName = `${firstName} ${lastName}`
   return fullName
 }
 
@@ -22,7 +22,7 @@ export function addNumbers(a: number, b: number): number {
 // the number of bottles of beer on the wall, but!
 // if the number of bottles is 0, it should return 'No more bottles of beer on the wall'
 export function bottlesOfBeerOnTheWall(bottles: number): string {
-  let numberOfBottles: string = ''
+  let numberOfBottles = ''
   if (bottles > 0) {
     return (numberOfBottles = `${bottles} bottles of beer on the wall`)
   } else {
@@ -33,13 +33,23 @@ export function bottlesOfBeerOnTheWall(bottles: number): string {
 // printGreeting should not return a value,
 // instead it should console.log a string containing
 // 'Hello name'
-export function printGreeting(): void {}
+export function printGreeting(word: string): void {
+  return console.log(`Hello ${word}`)
+}
 
 // ----------- OPTIONAL PARAMS -----------
 
 // sumFrame accepts two balls and returns the sum of the two numbers
 // sometimes there may be a third ball, if there is, add it to the sum
-export function sumFrame(): void {}
+export function sumFrame(num1: number, num2: number, num3?: number): number {
+  let total: number
+  if (num1 && num2 && num3) {
+    total = num1 + num2 + num3
+  } else {
+    total = num1 + num2
+  }
+  return total
+}
 
 // greetFullName should return a string containing the full name
 // including middle name if it exists
