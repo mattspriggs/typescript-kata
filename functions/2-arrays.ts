@@ -67,7 +67,13 @@ export function stringsOnly(array: string[] | null[]): object {
 // based on a tuple containing the first name, last name and year born
 // e.g. generateUsername(['John', 'Smith', 1980]) should return 'smithjo_1980'
 // e.g. generateUsername(['Jane', 'Doe', 1965]) should return 'doeja_1965'
-export function generateUsername(): void {}
+export function generateUsername(user: [string, string, number]): string {
+  // get last in [1] first 2 letters of first in [0] add _ then year in [2]
+  const firstTwo: string = user[0].toLocaleLowerCase()
+  const last: string = user[1].toLocaleLowerCase()
+  const username: string = last + firstTwo.slice(0, 2) + '_' + user[2]
+  return username
+}
 
 // getNextMapCoord should return the next coordinate in the direction specified
 // e.g. getNextMapCoord([0, 0], 'N') should return [0, 1]
