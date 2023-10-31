@@ -4,7 +4,10 @@ export function getNextNum(array: number[]): number {
 }
 
 // getLastSongPlayed should return the last song in the array
-export function getLastSongPlayed(): void {}
+export function getLastSongPlayed(array: string[]): string {
+  const lastSong: string = array[array.length - 1]
+  return lastSong
+}
 
 // findLongestWord should return the longest word in the array
 export function findLongestWord(): void {}
